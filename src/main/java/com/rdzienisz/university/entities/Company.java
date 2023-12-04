@@ -2,19 +2,16 @@ package com.rdzienisz.university.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 @Getter
 @Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Company {
 
     @Id
@@ -26,4 +23,7 @@ public class Company {
 
     @OneToMany(mappedBy = "company")
     private List<Employee> employees;
+
+    @ManyToMany
+    private List<Customer> customers;
 }

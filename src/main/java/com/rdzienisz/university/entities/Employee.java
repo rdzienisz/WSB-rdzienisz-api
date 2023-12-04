@@ -2,19 +2,15 @@ package com.rdzienisz.university.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 @Data
 @Getter
 @Setter
-@AllArgsConstructor
-@RequiredArgsConstructor
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Employee {
 
     @Id
@@ -24,4 +20,8 @@ public class Employee {
     private String name;
     private int age;
     private String position;
-    }
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
+}
