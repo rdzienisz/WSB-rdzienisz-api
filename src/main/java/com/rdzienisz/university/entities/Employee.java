@@ -1,9 +1,6 @@
 package com.rdzienisz.university.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,10 +8,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 @Getter
 @Setter
 @AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Employee {
 
     @Id
@@ -24,4 +24,4 @@ public class Employee {
     private String name;
     private int age;
     private String position;
-}
+    }
