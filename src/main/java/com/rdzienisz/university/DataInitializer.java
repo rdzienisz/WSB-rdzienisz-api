@@ -49,31 +49,26 @@ public class DataInitializer implements CommandLineRunner {
         Company company1 = Company.builder()
                 .name("ABC Corp")
                 .budget(100000.0)
-                .employees(Arrays.asList(employee1, employee2))
                 .build();
 
         Company company2 = Company.builder()
                 .name("XYZ Ltd")
                 .budget(80000.0)
-                .employees(Collections.singletonList(employee3))
                 .build();
 
         Customer customer1 = Customer.builder()
                 .name("Alice Johnson")
                 .money(50000.0)
-                .companies(Collections.singletonList(company1))
                 .build();
 
         Customer customer2 = Customer.builder()
                 .name("David White")
                 .money(75000.0)
-                .companies(Arrays.asList(company1, company2))
                 .build();
 
         Customer customer3 = Customer.builder()
                 .name("Eva Brown")
                 .money(60000.0)
-                .companies(Collections.singletonList(company2))
                 .build();
 
         employeeService.addEmployee(employee1);
